@@ -33,72 +33,81 @@
 
 
 <body>
-  <!--! header start  -->
-  <header>
-    <div class="header-row">
-      <div class="container">
-        <div class="header-wrapper">
-          <div class="header-mobile">
-            <i class="bi bi-list" id="btn-menu"></i>
-          </div>
+   <!--! header start  -->
+<header>
+  <div class="header-row">
+    <div class="container">
+      <div class="header-wrapper">
+        <!-- Hamburger Buton -->
+        <div class="header-mobile">
+          <i class="bi bi-list" id="btn-menu"></i>
+        </div>
 
-          <div class="header-left">
-            <a href="index.html" class="logo-img">
-              <img src="img_/sesraozcan.png" alt="Sesra Ozcan Logo" class="logo-img">
-            </a>
-          
-          </div>
+        <!-- Logo -->
+        <div class="header-left">
+          <a href="index.html" class="logo-img">
+            <img src="img_/sesraozcan.png" alt="Sesra Ozcan Logo" class="logo-img">
+          </a>
+        </div>
 
-          <div class="header-center" id="sidebar">
-            <nav class="navigation">
-              <ul class="menu-list">
-                <li class="menu-list-item">
-                <ul>
-                  <li class="menu-list-item megamenu-wrapper">
-                    <a href="" class="menu-link" style="text-decoration: none;">
-                      Projects
-                      <i class="bi bi-chevron-down"></i>
-                    </a>
-                    <div class="menu-dropdown-wrapper">
-                      <ul class="menu-dropdown-content">
-                        <li>
-                          <a href="#" style="text-decoration: none;">UI/UX Projects</a>
-                        </li>
-                        <li>
-                          <a href="#" style="text-decoration: none;">Product Design Projects</a>
-                        </li>
-                        <li>
-                          <a href="#" style="text-decoration: none;">Social Media Projects </a>
-                        </li>
-                        <li>
-                          <a href="#" style="text-decoration: none;">Development Projects</a>
-                        </li>
-                      </ul>
-                    </div>
-                </ul>
-                <!-- Social Media Links -->
-                <li>
-                  <a href="https://www.linkedin.com" target="_blank" style="text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 20px; color: white;"></i>
+        <!-- Mobil Menü / Sidebar -->
+        <div class="header-center" id="sidebar">
+          <!-- Kapatma butonu -->
+          <i class="bi bi-x-circle" id="close-menu"></i>
+
+          <nav class="navigation">
+            <ul class="menu-list">
+              <!-- Projects Dropdown -->
+              <li class="menu-list-item megamenu-wrapper">
+                <a href="#" class="menu-link" style="text-decoration: none;">
+                  Projects <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="menu-dropdown-wrapper">
+                  <ul class="menu-dropdown-content">
+                    <li><a href="#" style="text-decoration: none;">UI/UX Projects</a></li>
+                    <li><a href="#" style="text-decoration: none;">Product Design Projects</a></li>
+                    <li><a href="#" style="text-decoration: none;">Social Media Projects</a></li>
+                    <li><a href="#" style="text-decoration: none;">Development Projects</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- Sosyal Medya -->
+              <li>
+                <a href="https://www.linkedin.com/in/sesraozcan/" target="_blank" style="text-decoration: none;">
+                  <i class="fab fa-linkedin" style="font-size: 20px; color: white;"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.behance.net" target="_blank" style="text-decoration: none;">
+                <a href="https://www.behance.net/sacideozcan" target="_blank" style="text-decoration: none;">
                   <i class="fab fa-behance" style="font-size: 20px; color: white;"></i>
-              </a>
+                </a>
               </li>
-                <li>
-                  <a href="" style="color: azure; text-decoration: none;" class="btn btn-primary">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-          </div>
+              <li>
+                <a href="https://github.com/ssesraozcan?tab=repositories" target="_blank" style="text-decoration: none;">
+                  <i class="fab fa-github" style="font-size: 20px; color: white;"></i>
+                </a>
+              </li>
+
+              <!-- Contact Buton -->
+              <li>
+                <a href="#campaigns" style="color: azure; text-decoration: none;" class="btn btn-primary">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
-  </header>
-  <!-- header end -->
+  </div>
+</header>
+<!-- header end -->
+
+<!-- Overlay (dışarı tıklanınca menü kapanır) -->
+<div id="overlay" class="menu-overlay"></div>
+
+
 
   <section class="profile-section">
   <div class="profile-text">
@@ -446,6 +455,24 @@
 
 
   <!-- javascript  -->
+  <script>
+    const hamburgerBtn = document.getElementById('btn-menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+  
+    // Hamburger tıklanınca menü açılır
+    hamburgerBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    });
+  
+    // Overlay'e tıklanınca menü kapanır
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+
   <script src="js/main.js" type="module"></script>
   <script src="js/slider.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
@@ -456,3 +483,6 @@
 
 </html>
 
+git config --global user.name "Esra Sacide Ozcan"
+
+git config --global user.email "sesraozcann@gmail.com"

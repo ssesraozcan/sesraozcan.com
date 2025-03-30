@@ -14,9 +14,31 @@ header {
   max-height: 1000px;
   padding: 0px, 20px;
   transition: all 0.5s ease; /* Akışkan hareket */
-
-
 }
+
+.header-left {
+  order: 0;
+}
+
+.header-mobile {
+  order: 1;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  display: none;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
 /* Profil Alanı */
 .profile-section {
   display: flex; /* Yatayda içerikleri hizalar */
@@ -322,47 +344,38 @@ header .menu-dropdown-content a:hover {
 
 /*? menu dropdown end  */
 
-/*! header end  */
 
 /* header responsive */
-@media (max-width: 650px) {
+@media (max-width: 768px) {
+  .header-mobile {
+    display: inline-block;
+    order: 1;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Masaüstü menüyü gizle */
   .header-center {
     position: fixed;
     top: 0;
-    left: -100%;
+    right: -100%;
+    width: 60%;
+    max-width: 360px;
     height: 100vh;
-    background-color: #fff;
-    border-right: 1px solid #dee0ea;
-    z-index: 2;
-    padding: 0px, 20px;
-    transition: all 0.5s ease; /* Akışkan hareket */
+    background-color: #0c0c0c;
+    z-index: 999;
+    transition: right 0.4s ease;
+    padding: 40px 20px;
+    overflow-y: auto;
   }
 
-  .header-center .bi-x-circle {
-    display: inline-block;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-
-  .header-center .menu-list {
-    flex-direction: column;
-    padding: 50px 75px;
-  }
-
-  .header-mobile {
-    display: inline-block;
-  }
-
-  header .menu-list i {
-    display: none;
-  }
-  header .menu-list-item a {
-    font-size: 16px !important;
+  .header-center.active {
+    right: 0;
   }
 }
+
+/*! header end  */
+
 
 /* Medya Sorguları: Küçük Ekranlar */
 @media (max-width: 768px) {
@@ -387,4 +400,59 @@ header .menu-dropdown-content a:hover {
     width: 500px; /* Resmin genişliğini küçültür */
     margin-bottom: 20px; /* Metin ile resim arasında boşluk bırakır */
   }
+  @media (max-width: 768px) {
+    /* Menü başlangıçta gizli */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 60%;
+      max-width: 360px;
+      height: 100vh;
+      background-color: #0c0c0c;
+      z-index: 999;
+      transition: right 0.4s ease;
+      padding: 40px 20px;
+      overflow-y: auto;
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+  
+    #sidebar.active {
+      right: 0;
+    }
+  
+    /* Menü içeriği alt alta ve eşit boşlukla gelsin */
+    #sidebar .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 60px;
+      padding-left: 0;
+    }
+  
+    /* Hamburger ikonu görünür olsun */
+    .header-mobile {
+      display: inline-block;
+      cursor: pointer;
+      z-index: 1001;
+    }
+  
+    /* Sayfa arkasına tıklanınca kapanması için overlay */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 998;
+      display: none;
+    }
+  
+    .menu-overlay.active {
+      display: block;
+    }
+  }
+  
 }
