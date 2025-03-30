@@ -1,0 +1,56 @@
+.section-title h2 {
+  margin-bottom: 50px; /* Başlık ile liste arasındaki boşluk */
+  margin-top: 50px;
+  text-align: center; /* İsteğe bağlı: Başlığı ortalamak için */
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr !important; /* Her satıra kesinlikle 2 sütun */
+  gap: 30px; /* Kutular arasındaki boşluk */
+  max-width: 1200px; /* Blog listesinin toplam genişliği */
+  margin: 0 auto; /* Ortalamak için */
+  padding: 0;
+  list-style: none; /* Liste noktalarını kaldırır */
+}
+
+.blog-item {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.blog-image img {
+  display: block;
+  max-width: 50%;
+  height: auto; /* Resmin doğru boyutlanması */
+  margin: 0 auto 20px; /* Ortalar ve altına boşluk bırakır */
+}
+
+.blog-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* İçeriği ortalar */
+}
+
+.blog-info-center a {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 auto 20px; /* Ortalar ve altına boşluk bırakır */
+  text-decoration: none;
+  color: black;
+  
+}
+
+.blog-info-bottom p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin: 50;
+}
+
+@media (max-width: 768px) {
+  .blog-list {
+      grid-template-columns: 1fr !important; /* Her satıra 1 kutu */
+  }
+}
+

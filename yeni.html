@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesra Ozcan | Designer & Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .half {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+    .left {
+      background-color: #0f172a;
+    }
+    .right {
+      background-color: #1e293b;
+    }
+    .half:hover {
+      flex: 1.2;
+    }
+    .half h1 {
+      font-size: 2.5rem;
+      z-index: 2;
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.3);
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="half left" onclick="location.href='designer.html'">
+      <div class="overlay"></div>
+      <h1><a href="designer.html">I'm a Designer</a></h1>
+    </div>
+    <div class="half right" onclick="location.href='developer.html'">
+      <div class="overlay"></div>
+      <h1><a href="developer.html">I'm a Developer</a></h1>
+    </div>
+  </div>
+</body>
+</html>

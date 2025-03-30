@@ -1,0 +1,33 @@
+.categories .intro{
+    margin: 50px;
+}
+
+.categories .category-item{
+    background-color: #fff;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: start;
+}
+
+.categories .category-item a{
+    display: inline-block;
+    text-align: start;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.categories .category-item .category-image{
+        width: 100%;
+        padding: 0;
+}
+
+
+
+.categories .category-item .category-btn{
+    background-color:#820c91;
+    color:#fff;
+    width: 100%;
+    border-radius: 10px;
+}
