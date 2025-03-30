@@ -38,10 +38,6 @@
   <div class="header-row">
     <div class="container">
       <div class="header-wrapper">
-        <!-- Hamburger Buton -->
-        <div class="header-mobile">
-          <i class="bi bi-list" id="btn-menu"></i>
-        </div>
 
         <!-- Logo -->
         <div class="header-left">
@@ -57,7 +53,7 @@
 
           <nav class="navigation">
             <ul class="menu-list">
-              <!-- Projects Dropdown -->
+              <!-- Projects Dropdown 
               <li class="menu-list-item megamenu-wrapper">
                 <a href="#" class="menu-link" style="text-decoration: none;">
                   Projects <i class="bi bi-chevron-down"></i>
@@ -71,6 +67,7 @@
                   </ul>
                 </div>
               </li>
+              -->
 
               <!-- Sosyal Medya -->
               <li>
@@ -455,23 +452,26 @@
 
 
   <!-- javascript  -->
+
   <script>
-    const hamburgerBtn = document.getElementById('btn-menu');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
+    const header = document.querySelector("header");
   
-    // Hamburger tıklanınca menü açılır
-    hamburgerBtn.addEventListener('click', () => {
-      sidebar.classList.add('active');
-      overlay.classList.add('active');
-    });
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
   
-    // Overlay'e tıklanınca menü kapanır
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
+      // Opaklığı 1 ile 0.7 arasında tut
+      const newOpacity = Math.max(0.7, 1 - scrollY / 500);
+  
+      // Blur değeri 0px ila 10px arasında
+      const blurValue = Math.min(10, scrollY / 20);
+  
+      // Uygula
+      header.style.backgroundColor = `rgba(12, 12, 12, ${newOpacity})`;
+      header.style.backdropFilter = `blur(${blurValue}px)`;
+      header.style.webkitBackdropFilter = `blur(${blurValue}px)`;
     });
   </script>
+  
 
   <script src="js/main.js" type="module"></script>
   <script src="js/slider.js"></script>
@@ -482,7 +482,3 @@
 </body>
 
 </html>
-
-git config --global user.name "Esra Sacide Ozcan"
-
-git config --global user.email "sesraozcann@gmail.com"

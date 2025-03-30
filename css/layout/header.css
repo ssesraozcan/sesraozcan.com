@@ -3,118 +3,98 @@
 header {
   border-bottom: 1px;
   position: sticky;
-  width: calc(100% - 40px); /* Sağ ve sol boşluk için genişlik ayarı */
-  margin: 40px auto; /* Üstten ve yanlardan boşluk bırakır, ortalar */
-  top: 10px; /* Header’ın üstten biraz aşağıda başlaması için */
-  background: #0c0c0c;
-  border-radius: 40px; /* Kenarların yuvarlatılması */
+  width: calc(100% - 40px);
+  margin: 40px auto;
+  top: 10px;
+  background: rgba(12, 12, 12, 1);
+  border-radius: 40px;
   z-index: 10;
   color: #fff;
-  max-width: 1200px; /* Genişlik sınırı */
+  max-width: 1200px;
   max-height: 1000px;
-  padding: 0px, 20px;
-  transition: all 0.5s ease; /* Akışkan hareket */
+  padding: 0px 20px;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-.header-left {
-  order: 0;
-}
-
-.header-mobile {
-  order: 1;
-}
-
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 998;
-  display: none;
-}
-
-.menu-overlay.active {
-  display: block;
-}
 
 /* Profil Alanı */
 .profile-section {
-  display: flex; /* Yatayda içerikleri hizalar */
-  align-items: center; /* Dikeyde ortalar */
-  justify-content: space-between; /* Sol ve sağdaki içerikleri ayırır */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 40px;
-  background-color: #ffffff; /* Beyaz arka plan */
-  max-width: 1200px; /* Genişlik sınırı */
-  margin: 40px auto; /* Ortalamak için */
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 40px auto;
 }
 
 /* Sol Metin Alanı */
 .profile-text {
-  max-width: 60%; /* Metin alanının genişliği */
+  max-width: 60%;
 }
 
 .profile-text h1 {
-  font-size: 3rem; /* Adınız için yazı boyutu */
+  font-size: 3rem;
   font-weight: 600;
   margin: 0 0 10px 0;
-  color: #060606; /* Yazı rengi */
+  color: #060606;
 }
 
 .profile-text p {
-  font-size: 1rem; /* Unvan yazı boyutu */
+  font-size: 1rem;
   font-weight: 400;
-  color: #005953; /* Yazı rengi */
+  color: #005953;
   margin: 0;
 }
 
 /* Sağ Resim Alanı */
 .profile-image img {
-  width: 800px; /* Resim genişliği */
-  height: auto; /* Oranları korur */
+  width: 720px;
+  height: auto;
 }
 
-/* Genel container ayarı */
+/* Container */
 .container {
-  max-width: 1200px; /* Navigation bar ve içerik için ortak genişlik */
-  margin: 0 auto; /* Sayfanın ortasında konumlanmasını sağlar */
-  padding: 0 20px; /* Ekranın kenarlarına boşluk bırakır */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* About Me Bölümü */
+/* About */
 .about-section {
   background-color: #ffffff;
-  margin-bottom: 40px; /* Altındaki alanla boşluk bırakır */
+  margin-bottom: 40px;
 }
 
 .about-text {
-  max-width: 1200px; /* İçeriği daraltarak düzgün görünüm sağlar */
-  margin: 0 auto; /* İçeriği ortalar */
-  text-align: left; /* Metni sola hizalar */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
 }
 
 .about-text h2 {
-  position: relative; /* Çizginin başlıkla hareket etmesi için */
+  position: relative;
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
-  text-align: left; /* Başlığı sola hizalar */
+  text-align: left;
 }
 
 .about-text h2::before {
   content: "";
   position: absolute;
-  bottom: -10px; /* Çizgiyi başlığın altına yerleştirir */
-  width: 100px; /* Çizginin genişliği */
-  height: 2px; /* Çizginin kalınlığı */
-  background-color: #ccc; /* Çizginin rengi */
+  bottom: -10px;
+  width: 100px;
+  height: 2px;
+  background-color: #ccc;
 }
 
-
+/* Global Notification */
 .global-notification {
   background-color: #fff;
   padding: 14px 0;
@@ -128,6 +108,7 @@ header {
   font-weight: 600;
 }
 
+/* Header Yapısı */
 .header-row {
   height: 70px;
   display: flex;
@@ -140,12 +121,6 @@ header {
   align-items: center;
 }
 
-.header-mobile {
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
-}
-
 .header-center .bi-x-circle {
   display: none;
 }
@@ -154,7 +129,7 @@ header {
   display: flex;
   column-gap: 30px;
   align-items: center;
-  margin-top: 20px; /* Her liste öğesi için yukarıdan boşluk bırakır */
+  margin-top: 20px;
 }
 
 .header-center .menu-list .menu-list-item {
@@ -184,10 +159,7 @@ header {
   transition: 0.2s ease width;
 }
 
-.header-center .menu-list .menu-list-item:hover .menu-link::after {
-  width: 100%;
-}
-
+.header-center .menu-list .menu-list-item:hover .menu-link::after,
 .header-center .menu-list .menu-link.active::after {
   width: 100%;
 }
@@ -236,7 +208,7 @@ header {
   font-weight: 500;
 }
 
-/*? menu dropdown start  */
+/* Menü dropdown */
 header .menu-dropdown-wrapper {
   position: absolute;
   top: 100%;
@@ -257,8 +229,8 @@ header .menu-dropdown-content {
 }
 
 header .menu-dropdown-content a {
-  width: 250px !important; /* Genişliği zorla uygular */
-  box-sizing: border-box; /* Padding ve border genişliğe dahil edilir */
+  width: 250px !important;
+  box-sizing: border-box;
   display: flex;
   padding: 4px 30px;
   font-size: 14px;
@@ -276,6 +248,7 @@ header .menu-dropdown-content a:hover {
   visibility: visible;
 }
 
+/* Mega Menü */
 .menu-dropdown-megamenu {
   background-color: white;
   border: 1px solid #dee0ea;
@@ -284,15 +257,15 @@ header .menu-dropdown-content a:hover {
   column-gap: 50px;
 }
 
+.megamenu-wrapper {
+  position: static !important;
+}
+
 .megamenu-wrapper .menu-dropdown-wrapper {
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.megamenu-wrapper {
-  position: static !important;
 }
 
 .megamenu-wrapper .megamenu-links {
@@ -331,128 +304,435 @@ header .menu-dropdown-content a:hover {
   margin-top: 5px;
 }
 
+/* Buton */
 .btn.btn-primary {
-  background-color: #cb9aff !important; /* Arka plan rengini yeşil yapar */
-  color: white !important; /* Yazı rengini beyaz yapar */
-  border: none; /* Kenar çizgisini kaldırır */
+  background-color: #cb9aff !important;
+  color: white !important;
+  border: none;
   border-radius: 30px;
 }
 
 .btn.btn-primary:hover {
-  background-color: #9d6dd0 !important; /* Hover durumunda daha koyu yeşil */
+  background-color: #9d6dd0 !important;
 }
 
-/*? menu dropdown end  */
-
-
-/* header responsive */
+/*! header responsive */
 @media (max-width: 768px) {
   .header-mobile {
     display: inline-block;
-    order: 1;
-    cursor: pointer;
-    z-index: 1001;
   }
 
-  /* Masaüstü menüyü gizle */
-  .header-center {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 60%;
-    max-width: 360px;
-    height: 100vh;
-    background-color: #0c0c0c;
-    z-index: 999;
-    transition: right 0.4s ease;
-    padding: 40px 20px;
-    overflow-y: auto;
+  /*! header start  */
+
+header {
+  border-bottom: 1px;
+  position: sticky;
+  width: calc(100% - 40px);
+  margin: 40px auto;
+  top: 10px;
+  background: rgba(12, 12, 12, 1);
+  border-radius: 40px;
+  z-index: 10;
+  color: #fff;
+  max-width: 1200px;
+  max-height: 1000px;
+  padding: 0px 20px;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.header-left {
+  order: 0;
+}
+
+.header-mobile {
+  order: 1;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/*! Menü Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  display: none;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+/* Profil Alanı */
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Sol Metin Alanı */
+.profile-text {
+  max-width: 60%;
+}
+
+.profile-text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #060606;
+}
+
+.profile-text p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #005953;
+  margin: 0;
+}
+
+/* Sağ Resim Alanı */
+.profile-image img {
+  width: 800px;
+  height: auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* About */
+.about-section {
+  background-color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-text h2 {
+  position: relative;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-text h2::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 100px;
+  height: 2px;
+  background-color: #ccc;
+}
+
+/* Global Notification */
+.global-notification {
+  background-color: #fff;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #24252f;
+}
+
+.global-notification a {
+  color: white;
+  font-weight: 600;
+}
+
+/* Header Yapısı */
+.header-row {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-center .bi-x-circle {
+  display: none;
+}
+
+.header-center .navigation .menu-list {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.header-center .menu-list .menu-list-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+}
+
+.header-center .menu-list .menu-link {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  position: relative;
+  color: #fff;
+}
+
+.header-center .menu-list .menu-link::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 0.2s ease width;
+}
+
+.header-center .menu-list .menu-list-item:hover .menu-link::after,
+.header-center .menu-list .menu-link.active::after {
+  width: 100%;
+}
+
+.header-center .menu-list i {
+  font-size: 12px;
+}
+
+.header-right .header-right-links {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.header-right .bi-person {
+  font-size: 23px;
+}
+
+.header-right .search-button {
+  border: none;
+  background-color: transparent;
+}
+
+.header-right i {
+  font-size: 18px;
+  display: flex;
+}
+
+.header-right .header-cart {
+  position: relative;
+}
+
+.header-right .header-cart-link .header-cart-count {
+  width: 16px;
+  height: 16px;
+  background-color: #820c91;
+  color: white;
+  font-size: 10px;
+  border-radius: 100%;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+/* Menü dropdown */
+header .menu-dropdown-wrapper {
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+header .menu-dropdown-content {
+  background-color: #fff;
+  border: 1px solid #dee0ea;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0;
+}
+
+header .menu-dropdown-content a {
+  width: 250px !important;
+  box-sizing: border-box;
+  display: flex;
+  padding: 4px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #24252f;
+  transition: color 0.2s ease;
+}
+
+header .menu-dropdown-content a:hover {
+  color: #8d8d8d;
+}
+
+.header-center .menu-list .menu-list-item:hover .menu-dropdown-wrapper {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+/* Mega Menü */
+.menu-dropdown-megamenu {
+  background-color: white;
+  border: 1px solid #dee0ea;
+  padding: 22px;
+  display: flex;
+  column-gap: 50px;
+}
+
+.megamenu-wrapper {
+  position: static !important;
+}
+
+.megamenu-wrapper .menu-dropdown-wrapper {
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.megamenu-wrapper .megamenu-links {
+  display: flex;
+  column-gap: 50px;
+}
+
+.megamenu-wrapper .megamenu-products-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.megamenu-wrapper .megamenu-menu-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
+
+.megamenu-wrapper .megamenu-menu-list a {
+  font-size: 14px;
+}
+
+.megamenu-wrapper .megamenu-single-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.megamenu-wrapper .megamenu-single-subtitle {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.megamenu-wrapper .megamenu-single-button {
+  margin-top: 5px;
+}
+
+/* Buton */
+.btn.btn-primary {
+  background-color: #cb9aff !important;
+  color: white !important;
+  border: none;
+  border-radius: 30px;
+}
+
+.btn.btn-primary:hover {
+  background-color: #9d6dd0 !important;
+}
+
+/* Responsive görünüm */
+@media (max-width: 768px) {
+  .header-center .menu-list {
+    column-gap: 16px; /* boşlukları azalt */
+    font-size: 14px;  /* yazı boyutunu biraz küçült */
   }
 
-  .header-center.active {
-    right: 0;
+  /* Projects menüsünü gizle */
+  .menu-list-item.megamenu-wrapper {
+    display: none;
   }
 }
 
-/*! header end  */
-
-
-/* Medya Sorguları: Küçük Ekranlar */
+/* Profil alanı mobil */
 @media (max-width: 768px) {
   .profile-section {
-    flex-direction: column; /* İçerikleri dikey hizalar */
-    align-items: center; /* Ortaya hizalar */
-    text-align: center; /* Metinleri ortalar */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .profile-text {
     order: 2;
-    max-width: 100%; /* Metin genişliğini %100 yapar */
-    margin-top: 10px; /* Resim ile metin arasında boşluk bırakır */
+    max-width: 100%;
+    margin-top: 10px;
   }
 
-  .profile-text h1, .profile-text p {
-    text-align: center; /* Metinleri ortalar */
+  .profile-text h1,
+  .profile-text p {
+    text-align: center;
   }
 
   .profile-image img {
     order: 1;
-    width: 500px; /* Resmin genişliğini küçültür */
-    margin-bottom: 20px; /* Metin ile resim arasında boşluk bırakır */
+    width: 500px;
+    margin-bottom: 20px;
   }
-  @media (max-width: 768px) {
-    /* Menü başlangıçta gizli */
-    #sidebar {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 60%;
-      max-width: 360px;
-      height: 100vh;
-      background-color: #0c0c0c;
-      z-index: 999;
-      transition: right 0.4s ease;
-      padding: 40px 20px;
-      overflow-y: auto;
-      border-top-right-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-  
-    #sidebar.active {
-      right: 0;
-    }
-  
-    /* Menü içeriği alt alta ve eşit boşlukla gelsin */
-    #sidebar .menu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 60px;
-      padding-left: 0;
-    }
-  
-    /* Hamburger ikonu görünür olsun */
-    .header-mobile {
-      display: inline-block;
-      cursor: pointer;
-      z-index: 1001;
-    }
-  
-    /* Sayfa arkasına tıklanınca kapanması için overlay */
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: 998;
-      display: none;
-    }
-  
-    .menu-overlay.active {
-      display: block;
-    }
-  }
-  
 }
+
+/*! header end */
+
+}
+
+/* Profil alanı mobil */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-text {
+    order: 2;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .profile-text h1,
+  .profile-text p {
+    text-align: center;
+  }
+
+  .profile-image img {
+    order: 1;
+    width: 500px;
+    margin-bottom: 20px;
+  }
+}
+
+/*! header end */

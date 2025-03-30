@@ -20,67 +20,78 @@
 </head>
 <body>
     <!--! header start  -->
-  <header>
-    <div class="header-row">
-      <div class="container">
-        <div class="header-wrapper">
-          <div class="header-mobile">
-            <i class="bi bi-list" id="btn-menu"></i>
-          </div>
-          <div class="header-left">
-            <a href="index.html" class="logo" style="color: azure; text-decoration: none;">sesraozcan</a>
-          </div>
-          <div class="header-center" id="sidebar">
-            <nav class="navigation">
-              <ul class="menu-list">
-                <li class="menu-list-item">
-                <ul>
-                  <li class="menu-list-item megamenu-wrapper">
-                    <a href="" class="menu-link" style="text-decoration: none;">
-                      Projects
-                      <i class="bi bi-chevron-down"></i>
-                    </a>
-                    <div class="menu-dropdown-wrapper">
-                      <ul class="menu-dropdown-content">
-                        <li>
-                          <a href="#" style="text-decoration: none;">UI/UX Projects</a>
-                        </li>
-                        <li>
-                          <a href="#" style="text-decoration: none;">Product Design Projects</a>
-                        </li>
-                        <li>
-                          <a href="#" style="text-decoration: none;">Social Media Projects </a>
-                        </li>
-                        <li>
-                          <a href="#" style="text-decoration: none;">Development Projects</a>
-                        </li>
-                      </ul>
-                    </div>
-                </ul>
-                <!-- Social Media Links -->
-                <li>
-                  <a href="https://www.linkedin.com" target="_blank" style="text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 20px; color: white;"></i>
+<header>
+  <div class="header-row">
+    <div class="container">
+      <div class="header-wrapper">
+        <!-- Hamburger Buton -->
+        <div class="header-mobile">
+          <i class="bi bi-list" id="btn-menu"></i>
+        </div>
+
+        <!-- Logo -->
+        <div class="header-left">
+          <a href="index.html" class="logo-img">
+            <img src="img_/sesraozcan.png" alt="Sesra Ozcan Logo" class="logo-img">
+          </a>
+        </div>
+
+        <!-- Mobil Menü / Sidebar -->
+        <div class="header-center" id="sidebar">
+          <!-- Kapatma butonu -->
+          <i class="bi bi-x-circle" id="close-menu"></i>
+
+          <nav class="navigation">
+            <ul class="menu-list">
+              <!-- Projects Dropdown -->
+              <li class="menu-list-item megamenu-wrapper">
+                <a href="#" class="menu-link" style="text-decoration: none;">
+                  Projects <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="menu-dropdown-wrapper">
+                  <ul class="menu-dropdown-content">
+                    <li><a href="#" style="text-decoration: none;">UI/UX Projects</a></li>
+                    <li><a href="#" style="text-decoration: none;">Product Design Projects</a></li>
+                    <li><a href="#" style="text-decoration: none;">Social Media Projects</a></li>
+                    <li><a href="#" style="text-decoration: none;">Development Projects</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- Sosyal Medya -->
+              <li>
+                <a href="https://www.linkedin.com/in/sesraozcan/" target="_blank" style="text-decoration: none;">
+                  <i class="fab fa-linkedin" style="font-size: 20px; color: white;"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.behance.net" target="_blank" style="text-decoration: none;">
+                <a href="https://www.behance.net/sacideozcan" target="_blank" style="text-decoration: none;">
                   <i class="fab fa-behance" style="font-size: 20px; color: white;"></i>
-              </a>
+                </a>
               </li>
-                <li>
-                  <a href="" style="color: azure; text-decoration: none;" class="btn btn-primary">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-          </div>
+              <li>
+                <a href="https://github.com/ssesraozcan?tab=repositories" target="_blank" style="text-decoration: none;">
+                  <i class="fab fa-github" style="font-size: 20px; color: white;"></i>
+                </a>
+              </li>
+
+              <!-- Contact Buton -->
+              <li>
+                <a href="#campaigns" style="color: azure; text-decoration: none;" class="btn btn-primary">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
-  </header>
-  <!-- header end -->
+  </div>
+</header>
+<!-- header end -->
 
+<!-- Overlay (dışarı tıklanınca menü kapanır) -->
+<div id="overlay" class="menu-overlay"></div>
 
     <!-- Proje Detayları Başlangıç -->
     <div class="project-container">
@@ -140,6 +151,27 @@
     </div>
   </footer>
   <!--! footer end  -->
+
+  <!-- javascript  -->
+
+  <script>
+    const header = document.querySelector("header");
+  
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+  
+      // Opaklığı 1 ile 0.7 arasında tut
+      const newOpacity = Math.max(0.8, 1 - scrollY / 500);
+  
+      // Blur değeri 0px ila 10px arasında
+      const blurValue = Math.min(10, scrollY / 20);
+  
+      // Uygula
+      header.style.backgroundColor = `rgba(12, 12, 12, ${newOpacity})`;
+      header.style.backdropFilter = `blur(${blurValue}px)`;
+      header.style.webkitBackdropFilter = `blur(${blurValue}px)`;
+    });
+  </script>
     
 </body>
 </html>
