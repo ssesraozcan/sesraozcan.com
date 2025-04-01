@@ -74,13 +74,13 @@ button:disabled {
 }
 
 .btn-primary {
-  background-color: hsla(0, 0%, 93%, 0.5);
-  border-color: #045e5a;
+  background-color: #4FD1C5;
+  border-color: #319795;
 }
 
 .btn-primary:hover {
-  background-color: #fff;
-  color: #0c9188;
+  background-color: #319795;
+  color: #fff;
 }
 
 .custom-stroke-btn {

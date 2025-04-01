@@ -1,186 +1,86 @@
-/*! subscribe start  */
-
-.footer .subscribe-row {
-  background-color: #000;
-  color: white;
-  padding: 80px 0;
+.site-footer {
+  background-color: #0E0E0E;
+  color: #e6e6e6;
+  padding: 80px 10% 40px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.footer .footer-row-wrapper {
+.footer-inner {
   display: flex;
   justify-content: space-between;
-  column-gap: 200px;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-.footer .subscribe-title,
-.footer .contact-title {
-  font-size: 30px;
-  max-width: 500px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.footer .subscribe-desc,
-.footer .contact-desc {
-  font-size: 14px;
-  opacity: 0.6;
-  margin-top: 4px;
-}
-
-.footer .footer-subscribe-bottom,
-.footer .footer-contact-bottom {
-  margin-top: 40px;
-}
-
-.footer .footer-subscribe-bottom form {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.footer .footer-subscribe-bottom form > input {
+.footer-left {
   flex: 1;
-  height: 48px;
-  border: none;
+  min-width: 260px;
 }
 
-.footer .footer-subscribe-bottom form > button {
-  height: 48px !important;
-  border-color: #fff;
-  background-color: #000;
+.footer-title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.footer-title span {
+  color: #4FD1C5;
+  font-style: italic;
+}
+
+.footer-desc {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+.footer-btn {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #4FD1C5;
+  padding: 10px 20px;
+  color: #4FD1C5;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+  background: #4FD1C5;
   color: #fff;
 }
 
-.footer .privacy-text,
-.footer .privacy-text a {
-  font-size: 10px;
-  color: #75767c;
-  margin-top: 4px;
-  font-weight: 500;
-}
-
-.footer .footer-contact-bottom .download-app {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-}
-
-/*! subscribe end  */
-
-/*! widgets start  */
-.widgets-row {
-  padding: 60px 0;
-  border-bottom: 1px solid #dee0ea;
-}
-
-.widgets-row .footer-widgets {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.widgets-row .footer-widgets > div {
+.footer-right {
   flex: 1;
+  min-width: 200px;
+  text-align: right;
 }
 
-.widgets-row .footer-widgets > .brand-info {
-  flex: 3;
+.footer-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: #4FD1C5;
 }
 
-.footer-widgets .brand-info .footer-desc {
-  width: 400px;
-  font-size: 14px;
-  margin: 15px 0;
+.social-icons a {
+  font-size: 1.6rem;
+  color: #e6e6e6;
+  margin-left: 16px;
+  transition: color 0.3s ease;
 }
 
-.footer-widgets .brand-info .footer-contact {
-  font-size: 14px;
+.social-icons a:hover {
+  color: #4FD1C5;
 }
 
-.footer-widgets .widget-nav-menu h4 {
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.footer-widgets .widget-nav-menu ul {
-  margin-top: 20px;
-  font-size: 13px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
-}
-
-.footer-widgets .widget-nav-menu ul li a {
-  transition: 0.2s ease all;
-}
-
-.footer-widgets .widget-nav-menu ul li a:hover {
-  opacity: 0.5;
-}
-
-/*! widgets end  */
-
-/*! copyright start  */
-.footer-copyright {
-  margin: 40px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer-copyright .site-copyright {
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.footer-copyright .footer-menu {
-  margin-left: auto;
-}
-
-.footer-copyright .footer-menu-list {
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  column-gap: 10px;
-}
-
-.footer-copyright .footer-menu-list .list-item:not(:last-child) {
-  padding-right: 10px;
-  border-right: 1px solid #dee0ea;
-}
-/*! copyright end  */
-
-/*! responsive  */
-
-@media (max-width: 768px) {
-  .footer .footer-row-wrapper {
-    flex-direction: column;
-    row-gap: 20px;
-  }
-
-  .footer .brand-info {
-    margin-bottom: 20px;
-  }
-
-  .footer-widgets .brand-info .footer-desc {
-    width: unset;
-  }
-
-  .widgets-row .footer-widgets > div {
-    flex: unset !important;
-  }
-
-  .footer .brand-info {
-    margin-bottom: 20px;
-  }
-
-  .footer-copyright {
-    flex-direction: column;
-    text-align: center;
-    row-gap: 10px;
-  }
-
-  .footer-copyright .footer-menu {
-    margin-left: unset;
-  }
+.footer-bottom {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #222;
+  padding-top: 20px;
 }

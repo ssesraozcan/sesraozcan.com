@@ -306,15 +306,16 @@ header .menu-dropdown-content a:hover {
 
 /* Buton */
 .btn.btn-primary {
-  background-color: #cb9aff !important;
+  background-color: #4FD1C5 !important;
   color: white !important;
   border: none;
   border-radius: 30px;
 }
 
 .btn.btn-primary:hover {
-  background-color: #9d6dd0 !important;
+  background-color: #319795 !important;
 }
+
 
 /*! header responsive */
 @media (max-width: 768px) {
@@ -653,61 +654,11 @@ header .menu-dropdown-content a:hover {
 .megamenu-wrapper .megamenu-single-button {
   margin-top: 5px;
 }
+/* Mega Menü */
 
-/* Buton */
-.btn.btn-primary {
-  background-color: #cb9aff !important;
-  color: white !important;
-  border: none;
-  border-radius: 30px;
-}
-
-.btn.btn-primary:hover {
-  background-color: #9d6dd0 !important;
-}
 
 /* Responsive görünüm */
-@media (max-width: 768px) {
-  .header-center .menu-list {
-    column-gap: 16px; /* boşlukları azalt */
-    font-size: 14px;  /* yazı boyutunu biraz küçült */
-  }
 
-  /* Projects menüsünü gizle */
-  .menu-list-item.megamenu-wrapper {
-    display: none;
-  }
-}
-
-/* Profil alanı mobil */
-@media (max-width: 768px) {
-  .profile-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-text {
-    order: 2;
-    max-width: 100%;
-    margin-top: 10px;
-  }
-
-  .profile-text h1,
-  .profile-text p {
-    text-align: center;
-  }
-
-  .profile-image img {
-    order: 1;
-    width: 500px;
-    margin-bottom: 20px;
-  }
-}
-
-/*! header end */
-
-}
 
 /* Profil alanı mobil */
 @media (max-width: 768px) {
