@@ -1,4 +1,5 @@
 .site-footer {
+  width: 100vw; /* veya width: 100% */
   background-color: #0E0E0E;
   color: #e6e6e6;
   padding: 80px 10% 40px;
