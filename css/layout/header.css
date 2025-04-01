@@ -389,10 +389,26 @@ header .menu-dropdown-content a:hover {
 
 
 /*! header responsive */
-@media (max-width: 768px) {
-  .header-mobile {
-    display: inline-block;
+  @media (max-width: 480px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-right {
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  
+    .connect-button {
+      margin-top: 0.5rem;
+    }
   }
+  
+
+
 
   /*! header start  */
 
@@ -756,5 +772,6 @@ header .menu-dropdown-content a:hover {
     margin-bottom: 20px;
   }
 }
+
 
 /*! header end */
