@@ -64,7 +64,7 @@ header {
 .profile-image img {
   width: 720px;
   height: auto;
-  max-width: 99%;
+  max-width: 100%;
   display: block;
 }
 
