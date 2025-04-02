@@ -23,7 +23,7 @@
     max-width: 1200px; /* Maksimum genişlik */
     max-height: 600px; /* Maksimum yükseklik */
     object-fit: contain; /* Görüntüyü tam sığdır */
-    border-radius: 20px; /* Köşeleri yuvarlat */
+    border-radius: 10px; /* Köşeleri yuvarlat */
     margin-bottom: 20px;
 }
 
@@ -42,6 +42,7 @@
     flex-direction: column; /* Alt alta yerleştir */
     gap: 20px; /* Görseller arasında boşluk */
     width: 100%; /* Genişliği konteynere uydur */
+    height: 100%;
     align-items: center; /* Görselleri ortala */
 }
 
@@ -50,7 +51,7 @@
     max-width: 1200px; /* Maksimum genişlik */
     max-height: 600px; /* Maksimum yükseklik */
     object-fit: contain; /* Görüntüyü tam sığdır */
-    border-radius: 20px; /* Köşeleri yuvarlat */
+    border-radius: 10px; /* Köşeleri yuvarlat */
 }
 
 /* Responsive Tasarım: Tablet ve Mobil için */
