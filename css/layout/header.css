@@ -18,67 +18,7 @@ header {
   transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-.email-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(3px);
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-}
 
-.email-modal-content {
-  background: #ffffff;
-  padding: 30px 40px;
-  border-radius: 16px;
-  text-align: center;
-  max-width: 320px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.email-modal-content p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: #111;
-}
-
-.email-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.email-option {
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.default-mail {
-  background-color: #4FD1C5;
-  color: white;
-}
-
-.default-mail:hover {
-  background-color: #319795;
-}
-
-.gmail {
-  background-color: #d93025;
-  color: white;
-}
-
-.gmail:hover {
-  background-color: #a31d15;
-}
 
 .close-modal {
   background: transparent;
@@ -124,6 +64,8 @@ header {
 .profile-image img {
   width: 720px;
   height: auto;
+  max-width: 100%;
+  display: block;
 }
 
 /* Container */
