@@ -1,5 +1,6 @@
 .project-grid {
   display: grid;
+  isolation: isolate;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 1240px;

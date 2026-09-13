@@ -1,0 +1,348 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-motion] {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition:
+    opacity 0.85s var(--motion-ease),
+    transform 0.85s var(--motion-ease),
+    filter 0.85s var(--motion-ease);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+[data-motion].is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.profile-text h1 {
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.profile-collage {
+  position: relative;
+  max-width: 620px;
+}
+
+.profile-lead {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .profile-lead {
+    white-space: normal;
+  }
+}
+
+.profile-collage .collage-sizer {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.profile-collage .collage-piece {
+  position: absolute;
+  height: auto;
+  max-width: none;
+  display: block;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: collage-land 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.collage-piece--ocean {
+  z-index: 1;
+  left: 17.92%;
+  top: 6.32%;
+  width: 71.49% !important;
+  --land-x: 14px;
+  --land-y: -28px;
+  animation-delay: 60ms;
+}
+
+.collage-piece--wave {
+  z-index: 2;
+  left: 6.67%;
+  top: 0;
+  width: 21.21% !important;
+  --land-x: -18px;
+  --land-y: -22px;
+  animation-delay: 180ms;
+}
+
+.collage-piece--bio {
+  z-index: 3;
+  left: 0;
+  top: 64.63%;
+  width: 66.04% !important;
+  --land-x: -10px;
+  --land-y: 26px;
+  animation-delay: 300ms;
+}
+
+.collage-piece--profile {
+  z-index: 4;
+  left: 69.1%;
+  top: 25.5%;
+  width: 30% !important;
+  --land-x: 20px;
+  --land-y: 16px;
+  animation-delay: 420ms;
+}
+
+@keyframes collage-land {
+  0% {
+    opacity: 0;
+    transform: translate(var(--land-x), var(--land-y)) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.campaigns .campaign-item {
+  transition:
+    transform 0.55s var(--motion-ease),
+    box-shadow 0.55s var(--motion-ease);
+}
+
+.campaigns .campaign-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 60px rgba(12, 12, 12, 0.12);
+}
+
+.campaigns .campaign-item .btn {
+  transition:
+    transform 0.35s var(--motion-ease),
+    background-color 0.35s var(--motion-ease),
+    color 0.35s var(--motion-ease);
+}
+
+.campaigns .campaign-item:hover .btn {
+  transform: translateX(4px);
+}
+
+.impact-card {
+  position: relative;
+  overflow: visible;
+  transition:
+    transform 0.5s var(--motion-ease),
+    box-shadow 0.5s var(--motion-ease),
+    border-color 0.45s var(--motion-ease);
+}
+
+.impact-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  background: linear-gradient(
+    105deg,
+    transparent 36%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 64%
+  );
+  transform: translateX(-130%);
+  pointer-events: none;
+}
+
+.impact-card.is-in {
+  z-index: 1;
+}
+
+.impact-card:hover {
+  z-index: 3;
+}
+
+.impact-card[data-motion].is-in:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(12, 12, 12, 0.08);
+}
+
+.impact-card:hover::after {
+  transform: translateX(130%);
+  transition: transform 0.7s var(--motion-ease);
+}
+
+.impact-icon {
+  position: relative;
+  z-index: 2;
+}
+
+.impact-card:hover .impact-icon,
+.project-card:hover .project-icon {
+  animation: spark-spin 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.project-card {
+  position: relative;
+  overflow: visible;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 36%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 64%
+  );
+  transform: translateX(-130%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-card:hover {
+  z-index: 3;
+}
+
+.project-card:hover::after {
+  transform: translateX(130%);
+  transition: transform 0.7s var(--motion-ease);
+}
+
+.project-icon {
+  position: relative;
+  z-index: 2;
+}
+
+.project-card h3,
+.project-card p {
+  position: relative;
+  z-index: 2;
+}
+
+.custom-stroke-btn {
+  transition:
+    background-color 0.35s var(--motion-ease),
+    color 0.35s var(--motion-ease),
+    transform 0.35s var(--motion-ease),
+    box-shadow 0.35s var(--motion-ease);
+}
+
+.custom-stroke-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 89, 83, 0.16);
+}
+
+.more-project-card {
+  transition: transform 0.5s var(--motion-ease);
+}
+
+.more-project-card:hover {
+  transform: translateY(-6px);
+}
+
+.hi-cursor {
+  display: none;
+}
+
+@media (pointer: fine) {
+  html.hi-cursor-on.hi-cursor-hot,
+  html.hi-cursor-on.hi-cursor-hot * {
+    cursor: none !important;
+  }
+
+  .hi-cursor {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform;
+  }
+
+  .hi-cursor.is-on {
+    opacity: 1;
+  }
+
+  .hi-cursor-hand {
+    font-size: 28px;
+    line-height: 1;
+    filter: drop-shadow(0 2px 6px rgba(12, 12, 12, 0.16));
+  }
+
+  .hi-cursor-hi {
+    margin-top: 2px;
+    color: #0c0c0c;
+    font-family: "Jost", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-shadow: 0 1px 0 #fff;
+  }
+}
+
+@keyframes spark-spin {
+  0% {
+    transform: translate(90px, 70px) rotate(-200deg) scale(0.35);
+    opacity: 0;
+  }
+  58% {
+    transform: translate(-16px, -12px) rotate(24deg) scale(1.7);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes motion-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-motion],
+  [data-motion].is-in,
+  .collage-piece {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+    animation: none !important;
+  }
+
+  .campaigns .campaign-item,
+  .impact-card,
+  .impact-icon,
+  .impact-icon i,
+  .custom-stroke-btn,
+  .more-project-card,
+  .project-card,
+  .project-icon {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

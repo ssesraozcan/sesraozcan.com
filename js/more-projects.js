@@ -58,7 +58,7 @@
     .slice(0, 2)
     .map(
       (project) => `
-      <a class="more-project-card" href="${project.href}">
+      <a class="more-project-card" href="${project.href}" data-cursor="view" data-motion>
         <div class="more-project-cover">
           <span class="more-project-cover-img" style="background-image: url('${project.cover}')"></span>
         </div>
