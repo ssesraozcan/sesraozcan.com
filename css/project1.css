@@ -93,6 +93,8 @@
 }
 
 .project-masthead-meta span {
+    flex: 0 0 auto;
+    white-space: nowrap;
     font-size: 13px;
     font-weight: 500;
     color: #3d3d3d;
@@ -261,6 +263,25 @@
         padding-top: 8px;
     }
 
+    .project-masthead {
+        gap: 8px 16px;
+    }
+
+    .project-title {
+        font-size: 32px;
+        line-height: 36px;
+        height: 36px;
+    }
+
+    .project-masthead-meta {
+        gap: 6px;
+    }
+
+    .project-masthead-meta span {
+        font-size: 11px;
+        padding: 4px 9px;
+    }
+
     .project-image-frame {
         margin-bottom: 28px;
     }
@@ -268,22 +289,35 @@
 
 @media (max-width: 768px) {
     .project-masthead {
-        margin-bottom: 28px;
-        grid-template-rows: 16px 36px auto;
-        gap: 10px 16px;
+        margin-bottom: 20px;
+        grid-template-rows: 14px 28px;
+        gap: 6px 10px;
+    }
+
+    .project-masthead-kicker {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        line-height: 14px;
+    }
+
+    .project-masthead-index {
+        font-size: 9px;
+        line-height: 14px;
     }
 
     .project-title {
-        grid-column: 1 / -1;
-        font-size: 36px;
-        line-height: 36px;
-        height: 36px;
+        font-size: 22px;
+        line-height: 28px;
+        height: 28px;
     }
 
     .project-masthead-meta {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .project-masthead-meta span {
+        font-size: 9px;
+        padding: 3px 7px;
     }
 
     .project-description {
