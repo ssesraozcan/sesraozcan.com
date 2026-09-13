@@ -34,14 +34,14 @@
 }
 
 .campaigns-wrapper:nth-child(1) .campaign-item:nth-child(1) {
-  background-image: url(../../img_/Thumbnail.png);
+  background-image: url(../../img_/halleder_01.png?v=png4);
   size: 100%;
   max-width: 1200px;
   max-height: 520px;
 }
 
 .campaigns-wrapper:nth-child(1) .campaign-item:nth-child(2) {
-  background-image: url(../../img_/product2.jpg);
+  background-image: url(../../img_/roamly_cover.png);
   size: 100%;
   max-width: 1200px;
   max-height: 520px;
@@ -49,10 +49,32 @@
 }
 
 .campaigns-wrapper:nth-child(1) .campaign-item:nth-child(3) {
+  background-image: url(../../img_/voya_cover.png?v=png2);
+  size: 100%;
+  max-width: 1200px;
+  max-height: 520px;
+}
+
+.campaigns-wrapper:nth-child(1) .campaign-item:nth-child(4) {
+  background-image: url(../../img_/Thumbnail.png);
+  size: 100%;
+  max-width: 1200px;
+  max-height: 520px;
+}
+
+.campaigns-wrapper:nth-child(1) .campaign-item:nth-child(5) {
+  background-image: url(../../img_/product2.jpg);
+  size: 100%;
+  max-width: 1200px;
+  max-height: 520px;
+}
+
+.campaigns-wrapper:nth-child(1) .campaign-item:nth-child(6) {
   background-image: url(../../img_/product3.png);
   size: 100%;
   max-width: 1200px;
   max-height: 520px;
+  display: none;
 }
 
 .separator {

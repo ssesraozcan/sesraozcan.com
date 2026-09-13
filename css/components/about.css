@@ -1,0 +1,86 @@
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 36px auto 0;
+}
+
+.impact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 22px 22px;
+  border-radius: 16px;
+  background: #f6f6f6;
+  border: 1px solid #ececec;
+}
+
+.impact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.impact-icon--green {
+  color: #3f9d4a;
+  background: rgba(63, 157, 74, 0.14);
+}
+
+.impact-icon--teal {
+  color: #005953;
+  background: rgba(0, 89, 83, 0.12);
+}
+
+.impact-icon--blue {
+  color: #3d5bdb;
+  background: rgba(61, 91, 219, 0.12);
+}
+
+.impact-icon--violet {
+  color: #6b4fd8;
+  background: rgba(107, 79, 216, 0.12);
+}
+
+.impact-stat {
+  margin: 0 0 8px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+
+.impact-title {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #222;
+}
+
+.impact-note {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #6a6a6a;
+}
+
+@media (max-width: 1024px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}

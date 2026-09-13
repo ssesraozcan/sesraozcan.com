@@ -1,15 +1,22 @@
-/* Genel Konteyner Ayarları */
-.project-container {
-    max-width: 1240px; /* Konteyner genişliği */
-    margin: 40px auto; /* Ortalamak için */
-    padding: 0 20px; /* Sağ ve sol kenar boşluğu */
-    display: flex;
-    flex-direction: column; /* Tüm öğeleri alt alta yerleştir */
-    align-items: center; /* Ortalamak için */
-    color: rgb(0, 0, 0); /* Yazı rengi */
+/* Project detail pages */
+.project-container,
+.more-projects {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 48px 64px 80px;
+    box-sizing: border-box;
 }
 
-/* Başlık Ayarları */
+.project-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    color: rgb(0, 0, 0);
+}
+
 .project-title {
     font-size: 28px;
     font-weight: bold;
@@ -17,46 +24,163 @@
     margin-bottom: 20px;
 }
 
-/* İlk Görsel Ayarları */
-.project-main-image {
-    width: 100%; /* Genişliği konteynere uydur */
-    max-width: 1200px; /* Maksimum genişlik */
-    max-height: 600px; /* Maksimum yükseklik */
-    object-fit: contain; /* Görüntüyü tam sığdır */
-    border-radius: 10px; /* Köşeleri yuvarlat */
-    margin-bottom: 20px;
+.project-title,
+.project-image-frame,
+.project-extra-images,
+.lupi-coming .lupi-stage,
+.more-projects-kicker,
+.more-projects-title,
+.more-projects-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Açıklama Metni Ayarları */
+.project-image-frame {
+    position: relative;
+    flex: 0 0 auto;
+    height: auto;
+    min-width: 0;
+    margin-bottom: 32px;
+    background: transparent;
+}
+
+.project-main-image,
+.extra-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-width: 0;
+    margin: 0 auto 24px;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.project-image-frame .project-main-image,
+.project-image-frame .extra-image {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
 .project-description {
     font-size: 18px;
     line-height: 1.8;
     text-align: justify;
     margin-bottom: 20px;
-    max-width: 1200px; /* Metin genişliğini sınırla */
+    max-width: 1200px;
 }
 
-/* Alt Görseller Alanı */
 .project-extra-images {
     display: flex;
-    flex-direction: column; /* Alt alta yerleştir */
-    gap: 20px; /* Görseller arasında boşluk */
-    width: 100%; /* Genişliği konteynere uydur */
-    height: 100%;
-    align-items: center; /* Görselleri ortala */
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: stretch;
 }
 
-.extra-image {
-    width: 100%; /* Genişliği konteynere uydur */
-    max-width: 1200px; /* Maksimum genişlik */
-    max-height: 600px; /* Maksimum yükseklik */
-    object-fit: contain; /* Görüntüyü tam sığdır */
-    border-radius: 10px; /* Köşeleri yuvarlat */
+.more-projects-kicker {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5a5a5a;
+    text-align: left;
 }
 
-/* Responsive Tasarım: Tablet ve Mobil için */
-@media (max-width: 1024px) { /* Tablet Ekranlar */
-    .project-title {
+.more-projects-title {
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: left;
+    color: #111;
+}
+
+.more-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.more-project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    min-width: 0;
+}
+
+.more-project-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ececec;
+}
+
+.more-project-cover-img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.more-project-card:hover .more-project-cover-img {
+    transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .more-project-cover-img {
+        transition: none;
+    }
+
+    .more-project-card:hover .more-project-cover-img {
+        transform: none;
+    }
+}
+
+.more-project-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 0 0;
+}
+
+.more-project-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+
+.more-project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.more-project-card:hover .more-project-cta {
+    color: #319795;
+}
+
+@media (max-width: 1024px) {
+    .project-title,
+    .more-projects-title {
         font-size: 24px;
     }
 
@@ -64,24 +188,36 @@
         font-size: 16px;
     }
 
-    .project-main-image,
-    .extra-image {
-        max-width: 100%; /* Tablet ekranlarda tam genişlik */
+    .project-container,
+    .more-projects {
+        padding: 36px 40px 64px;
+    }
+
+    .project-image-frame {
+        margin-bottom: 28px;
     }
 }
 
-@media (max-width: 768px) { /* Mobil Ekranlar */
+@media (max-width: 768px) {
     .project-title {
         font-size: 20px;
     }
 
     .project-description {
         font-size: 14px;
-        text-align: left; /* Mobilde sola hizalı metin */
+        text-align: left;
     }
 
-    .project-main-image,
-    .extra-image {
-        max-width: 100%; /* Mobil ekranlarda tam genişlik */
+    .project-container,
+    .more-projects {
+        padding: 24px 24px 56px;
+    }
+
+    .project-image-frame {
+        margin-bottom: 24px;
+    }
+
+    .more-projects-grid {
+        grid-template-columns: 1fr;
     }
 }

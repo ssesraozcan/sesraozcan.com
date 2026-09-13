@@ -1,0 +1,36 @@
+.voya-project {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: stretch;
+    padding: 48px 64px 80px;
+    box-sizing: border-box;
+}
+
+.voya-project .project-image-frame {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.voya-project .project-image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+}
+
+@media (max-width: 1024px) {
+    .voya-project {
+        padding: 36px 40px 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .voya-project {
+        padding: 24px 24px 56px;
+    }
+}

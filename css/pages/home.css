@@ -37,6 +37,10 @@
 /*! products end  */
 
 /*! campaign start  */
+.campaigns {
+  padding-top: 80px;
+}
+
 .campaigns .campaigns-wrapper {
   display: flex;
   gap: 30px;
