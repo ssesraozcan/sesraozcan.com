@@ -3,7 +3,6 @@
     max-width: 100%;
     min-width: 0;
     align-items: stretch;
-    padding: 48px 64px 80px;
     box-sizing: border-box;
 }
 
@@ -24,13 +23,13 @@
 }
 
 @media (max-width: 1024px) {
-    .voya-project {
-        padding: 36px 40px 64px;
+    .voya-project .project-image-frame {
+        margin-bottom: 28px;
     }
 }
 
 @media (max-width: 768px) {
-    .voya-project {
-        padding: 24px 24px 56px;
+    .voya-project .project-image-frame {
+        margin-bottom: 24px;
     }
 }
